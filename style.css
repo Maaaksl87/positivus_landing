@@ -89,4 +89,36 @@ body {
   .wrapper .header__navbar__mobile {
     display: flex;
   }
+}
+.wrapper .main__section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.wrapper .main__section__text {
+  font-family: "Space Grotesk", sans-serif;
+  align-items: flex-start;
+  max-width: 531px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.wrapper .main__section__text-head {
+  font-size: 60px;
+  font-weight: 500;
+}
+.wrapper .main__section__text-desc {
+  font-size: 20px;
+  font-weight: 400;
+}
+.wrapper .main__section__text-btn {
+  padding: 20px 35px;
+  background-color: #191a23;
+  font-family: Space Grotesk;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 14px;
 }/*# sourceMappingURL=style.css.map */
