@@ -7,6 +7,20 @@ body {
   margin: 0 auto;
   margin-top: 60px;
 
+  @media (min-width: 1100px) and (max-width: 1600px) {
+    max-width: calc(
+      1000px + (1300 - 1000) * ((100vw - 1100px) / (1600 - 1100))
+    );
+  }
+
+  @media (min-width: 767px) and (max-width: 1100px) {
+    max-width: calc(715px + (1000 - 715) * ((100vw - 767px) / (1100 - 767)));
+  }
+
+  @media (min-width: 375px) and (max-width: 767px) {
+    max-width: calc(345px + (715 - 345) * ((100vw - 375px) / (767 - 375)));
+  }
+
   .header {
     font-family: "Space Grotesk", sans-serif;
     &__navbar {
@@ -15,10 +29,20 @@ body {
       justify-content: space-between;
       &__logo {
         display: flex;
+        img {
+          @media (min-width: 375px) and (max-width: 767px) {
+            width: calc(23px + (36 - 23) * ((100vw - 375px) / (767 - 375)));
+          }
+        }
 
         .header__text {
           margin: 0;
           margin-left: 14px;
+          font-weight: 500;
+
+          @media (min-width: 375px) and (max-width: 767px) {
+            font-size: calc(28px + (32 - 28) * ((100vw - 375px) / (767 - 375)));
+          }
         }
       }
       &__links {
@@ -26,6 +50,16 @@ body {
         gap: 40px;
         align-items: center;
         font-size: 20px;
+
+        @media (min-width: 1100px) and (max-width: 1600px) {
+          gap: calc(
+            20px + (40 - 20) * ((100vw - 1100px) / (1600 - 1100))
+          ); // момент в відео 5:45, Live #8       **менше, більше, менше
+        }
+
+        @media (max-width: 1100px) {
+          display: none;
+        }
 
         a {
           text-decoration: none;
@@ -38,6 +72,19 @@ body {
           border-radius: 14px;
           background-color: transparent;
           font-size: 20px;
+          font-family: "Space Grotesk", sans-serif;
+
+          @media (min-width: 1100px) and (max-width: 1600px) {
+            padding: calc(16px + (20 - 16) * ((100vw - 1100px) / (1600 - 1100)))
+              calc(20px + (35 - 25) * ((100vw - 1100px) / (1600 - 1100)));
+          }
+        }
+      }
+      &__mobile {
+        display: none;
+
+        @media (max-width: 1100px) {
+          display: flex;
         }
       }
     }
