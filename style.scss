@@ -1,6 +1,23 @@
+@function values($min-value, $max-value, $min-viewport, $max-viewport) {
+  $min-width-value: $min-value / 1px;
+  $max-width-value: $max-value / 1px;
+  $min-viewport-value: $min-viewport / 1px;
+  $max-viewport-value: $max-viewport / 1px;
+
+  @return calc(
+    #{$min-width-value}px + (#{$max-width-value} - #{$min-width-value}) *
+      (
+        (100vw - #{$min-viewport-value}px) /
+          (#{$max-viewport-value} - #{$min-viewport-value})
+      )
+  );
+}
+
 body {
   margin: 0;
 }
+
+//font-size: values(16px, 24px, 393px, 1180px);
 
 .wrapper {
   max-width: 1300px;
@@ -8,17 +25,20 @@ body {
   margin-top: 60px;
 
   @media (min-width: 1100px) and (max-width: 1600px) {
-    max-width: calc(
-      1000px + (1300 - 1000) * ((100vw - 1100px) / (1600 - 1100))
-    );
+    max-width: values(
+      1000px,
+      1300px,
+      1100px,
+      1600px
+    ); // менше більше, менше більше
   }
 
   @media (min-width: 767px) and (max-width: 1100px) {
-    max-width: calc(715px + (1000 - 715) * ((100vw - 767px) / (1100 - 767)));
+    max-width: values(715px, 1000px, 767px, 1100px);
   }
 
   @media (min-width: 375px) and (max-width: 767px) {
-    max-width: calc(345px + (715 - 345) * ((100vw - 375px) / (767 - 375)));
+    max-width: values(345px, 715px, 375px, 767px);
   }
 
   .header {
@@ -31,7 +51,7 @@ body {
         display: flex;
         img {
           @media (min-width: 375px) and (max-width: 767px) {
-            width: calc(23px + (36 - 23) * ((100vw - 375px) / (767 - 375)));
+            width: values(23px, 36px, 375px, 767px);
           }
         }
 
@@ -41,7 +61,7 @@ body {
           font-weight: 500;
 
           @media (min-width: 375px) and (max-width: 767px) {
-            font-size: calc(28px + (32 - 28) * ((100vw - 375px) / (767 - 375)));
+            font-size: values(28px, 32px, 375px, 767px);
           }
         }
       }
@@ -52,9 +72,7 @@ body {
         font-size: 20px;
 
         @media (min-width: 1100px) and (max-width: 1600px) {
-          gap: calc(
-            20px + (40 - 20) * ((100vw - 1100px) / (1600 - 1100))
-          ); // момент в відео 5:45, Live #8       **менше, більше, менше
+          gap: values(20px, 40px, 1100px, 1600px);
         }
 
         @media (max-width: 1100px) {
@@ -75,8 +93,8 @@ body {
           font-family: "Space Grotesk", sans-serif;
 
           @media (min-width: 1100px) and (max-width: 1600px) {
-            padding: calc(16px + (20 - 16) * ((100vw - 1100px) / (1600 - 1100)))
-              calc(20px + (35 - 25) * ((100vw - 1100px) / (1600 - 1100)));
+            padding: values(16px, 20px, 1100px, 1600px)
+              values(20px, 35px, 1100px, 1600px);
           }
         }
       }
@@ -121,6 +139,12 @@ body {
           color: #ffffff;
           border-radius: 14px;
         }
+      }
+      &__mobile-img {
+        display: none;
+      }
+      &__img {
+        // display: none;
       }
     }
   }
