@@ -95,6 +95,11 @@ body {
   justify-content: space-between;
   margin-top: 70px;
 }
+@media (min-width: 430px) and (max-width: 1600px) {
+  .wrapper .main__section {
+    margin-top: calc(40px + (70 - 40) * (100vw - 375px) / (1600 - 375));
+  }
+}
 .wrapper .main__section__text {
   font-family: "Space Grotesk", sans-serif;
   align-items: flex-start;
@@ -103,13 +108,61 @@ body {
   flex-direction: column;
   gap: 35px;
 }
+@media (min-width: 1100px) and (max-width: 1600px) {
+  .wrapper .main__section__text {
+    gap: calc(25px + (35 - 25) * (100vw - 1100px) / (1600 - 1100));
+    max-width: calc(477px + (531 - 477) * (100vw - 1100px) / (1600 - 1100));
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .wrapper .main__section__text {
+    gap: calc(18px + (25 - 18) * (100vw - 900px) / (1100 - 900));
+    max-width: calc(400px + (477 - 400) * (100vw - 900px) / (1100 - 900));
+  }
+}
+@media (max-width: 900px) {
+  .wrapper .main__section__text {
+    max-width: 100%;
+    gap: 0px;
+  }
+}
 .wrapper .main__section__text-head {
   font-size: 60px;
   font-weight: 500;
+  line-height: 76px;
+}
+@media (min-width: 1100px) and (max-width: 1600px) {
+  .wrapper .main__section__text-head {
+    font-size: calc(54px + (60 - 54) * (100vw - 1100px) / (1600 - 1100));
+    line-height: calc(69px + (76 - 69) * (100vw - 1100px) / (1600 - 1100));
+  }
+}
+@media (min-width: 767px) and (max-width: 1100px) {
+  .wrapper .main__section__text-head {
+    font-size: calc(43px + (54 - 43) * (100vw - 767px) / (1100 - 767));
+    line-height: calc(62px + (69 - 62) * (100vw - 767px) / (1100 - 767));
+  }
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .wrapper .main__section__text-head {
+    font-size: calc(42px + (43 - 42) * (100vw - 375px) / (767 - 375));
+    line-height: calc(55px + (62 - 55) * (100vw - 375px) / (767 - 375));
+  }
 }
 .wrapper .main__section__text-desc {
   font-size: 20px;
   font-weight: 400;
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .wrapper .main__section__text-desc {
+    font-size: calc(16px + (20 - 16) * (100vw - 375px) / (767 - 375));
+    line-height: calc(24px + (28 - 24) * (100vw - 375px) / (767 - 375));
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrapper .main__section__text-desc {
+    margin-bottom: 40px;
+  }
 }
 .wrapper .main__section__text-btn {
   padding: 20px 35px;
@@ -124,4 +177,25 @@ body {
 }
 .wrapper .main__section__mobile-img {
   display: none;
+}
+@media screen and (max-width: 900px) {
+  .wrapper .main__section__mobile-img {
+    display: flex;
+    min-width: 361px;
+    margin: 10px 0 20px 0;
+  }
+}
+.wrapper .main__section__mobile-img img {
+  width: 100%;
+}
+.wrapper .main__section__img {
+  max-width: 600px;
+}
+@media screen and (max-width: 900px) {
+  .wrapper .main__section__img {
+    display: none;
+  }
+}
+.wrapper .main__section__img img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
