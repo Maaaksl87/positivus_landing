@@ -198,4 +198,15 @@ body {
 }
 .wrapper .main__section__img img {
   width: 100%;
+}
+.wrapper .main__partners {
+  display: flex;
+  gap: 96px;
+  filter: grayscale(1);
+  margin: 70px 0 140px 0;
+}
+@media (min-width: 1100px) and (max-width: 1600px) {
+  .wrapper .main__partners {
+    gap: calc(47px + (96 - 47) * (100vw - 1100px) / (1600 - 1100));
+  }
 }/*# sourceMappingURL=style.css.map */
