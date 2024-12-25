@@ -262,6 +262,16 @@ body {
           height: 46px;
         }
       }
+      &__cardWrap {
+        .card {
+          &--title {
+          }
+          &--image {
+          }
+          &--link {
+          }
+        }
+      }
     }
   }
 }
