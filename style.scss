@@ -1,3 +1,7 @@
+$gery-color: #f3f3f3;
+$dark-color: #191a23;
+$green-color: #b9ff66;
+
 @function values($min-value, $max-value, $min-viewport, $max-viewport) {
   $min-width-value: $min-value / 1px;
   $max-width-value: $max-value / 1px;
@@ -13,9 +17,15 @@
   );
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body {
   margin: 0;
-  // overflow: hidden;
+  overflow-x: hidden;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 //font-size: values(16px, 24px, 393px, 1180px);
@@ -42,8 +52,10 @@ body {
     max-width: values(345px, 715px, 375px, 767px);
   }
 
-  .header {
+  button {
     font-family: "Space Grotesk", sans-serif;
+  }
+  .header {
     &__navbar {
       display: flex;
       align-items: center;
@@ -91,7 +103,6 @@ body {
           border-radius: 14px;
           background-color: transparent;
           font-size: 20px;
-          font-family: "Space Grotesk", sans-serif;
 
           @media (min-width: 1100px) and (max-width: 1600px) {
             padding: values(16px, 20px, 1100px, 1600px)
@@ -124,7 +135,6 @@ body {
         ); // менше більше, менше більше
       }
       &__text {
-        font-family: "Space Grotesk", sans-serif;
         align-items: flex-start;
         max-width: 531px;
         display: flex;
@@ -191,7 +201,6 @@ body {
         &-btn {
           padding: 20px 35px;
           background-color: #191a23;
-          font-family: Space Grotesk;
           font-size: 20px;
           font-weight: 400;
           line-height: 28px;
@@ -242,13 +251,11 @@ body {
       &__text {
         display: flex;
         gap: 40px;
-        font-family: Space Grotesk;
 
         &-title {
-          background-color: #b9ff66;
+          background-color: $green-color;
           padding: 0px 7px 0px 7px;
           border-radius: 7px 0px 0px 0px;
-          width: 164px;
           height: 51px;
           font-size: 40px;
           font-weight: 500;
@@ -262,13 +269,108 @@ body {
           height: 46px;
         }
       }
-      &__cardWrap {
-        .card {
-          &--title {
+      &__cardsWrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin: 80px 0 100px 0;
+
+        &-card {
+          padding: 50px;
+          max-width: 600px;
+          width: 100%;
+          border: 1px solid $dark-color;
+          border-radius: 45px;
+          box-shadow: 0px 5px 0px 0px;
+          position: relative;
+          &-content {
+            &-title {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 93px;
+              span {
+                width: fit-content;
+                font-size: 30px;
+                font-weight: 500;
+                padding: 0 7px;
+                border-radius: 7px;
+              }
+            }
+            &-btnWrap {
+              display: flex;
+              gap: 15px;
+              &-iconWrap {
+                width: 41px;
+                aspect-ratio: 1;
+                background: black;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              button {
+                background: none;
+                border: none;
+                font-size: 20px;
+              }
+            }
           }
-          &--image {
+          .mainimg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 50px;
           }
-          &--link {
+        }
+        .colorGray {
+          background-color: $gery-color;
+
+          span {
+            background-color: $green-color;
+          }
+        }
+        .colorGreen {
+          background-color: $green-color;
+
+          span {
+            background: $gery-color;
+          }
+        }
+        .colorDark {
+          background-color: $dark-color;
+          button {
+            color: #fff;
+          }
+
+          span {
+            background: $green-color;
+          }
+        }
+      }
+      &__flayerWrap {
+        background: $gery-color;
+        border-radius: 45px;
+        &-content {
+          padding: 60px 0px 60px 60px;
+          max-width: 500px;
+
+          &-title {
+            font-size: 30px;
+            font-weight: 500;
+          }
+          &-desc {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 26px 0;
+          }
+          button {
+            padding: 20px 35px;
+            background: $dark-color;
+            border-radius: 14px;
+            border: none;
+            color: #fff;
+            font-weight: 400;
+            font-size: 20px;
           }
         }
       }
