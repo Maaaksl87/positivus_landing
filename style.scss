@@ -269,11 +269,18 @@ body {
           height: 46px;
         }
       }
+
       &__cardsWrap {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         margin: 80px 0 100px 0;
+
+        @media (min-width: 900px) and (max-width: 1600px) {
+          gap: values(25px, 40px, 900px, 1600px); // менше більше, менше більше
+          margin: values(40px, 80px, 900px, 1600px) 0
+            values(70px, 100px, 900px, 1600px) 0;
+        }
 
         &-card {
           padding: 50px;
@@ -283,17 +290,38 @@ body {
           border-radius: 45px;
           box-shadow: 0px 5px 0px 0px;
           position: relative;
+
+          @media (min-width: 900px) and (max-width: 1600px) {
+            padding: values(
+              30px,
+              50px,
+              900px,
+              1600px
+            ); // менше більше, менше більше
+          }
           &-content {
             &-title {
               display: flex;
               flex-direction: column;
+              position: relative;
+              z-index: 1;
               margin-bottom: 93px;
+
               span {
                 width: fit-content;
                 font-size: 30px;
                 font-weight: 500;
                 padding: 0 7px;
                 border-radius: 7px;
+
+                @media (min-width: 900px) and (max-width: 1600px) {
+                  font-size: values(
+                    25px,
+                    30px,
+                    900px,
+                    1600px
+                  ); // менше більше, менше більше
+                }
               }
             }
             &-btnWrap {
@@ -320,6 +348,16 @@ body {
             top: 50%;
             transform: translateY(-50%);
             right: 50px;
+            max-width: 210px;
+
+            @media (min-width: 900px) and (max-width: 1600px) {
+              max-width: values(
+                160px,
+                210px,
+                900px,
+                1600px
+              ); // менше більше, менше більше
+            }
           }
         }
         .colorGray {

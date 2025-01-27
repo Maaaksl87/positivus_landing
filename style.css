@@ -247,6 +247,12 @@ body {
   gap: 40px;
   margin: 80px 0 100px 0;
 }
+@media (min-width: 900px) and (max-width: 1600px) {
+  .wrapper .main__services__cardsWrap {
+    gap: calc(25px + (40 - 25) * (100vw - 900px) / (1600 - 900));
+    margin: calc(40px + (80 - 40) * (100vw - 900px) / (1600 - 900)) 0 calc(70px + (100 - 70) * (100vw - 900px) / (1600 - 900)) 0;
+  }
+}
 .wrapper .main__services__cardsWrap-card {
   padding: 50px;
   max-width: 600px;
@@ -256,9 +262,16 @@ body {
   box-shadow: 0px 5px 0px 0px;
   position: relative;
 }
+@media (min-width: 900px) and (max-width: 1600px) {
+  .wrapper .main__services__cardsWrap-card {
+    padding: calc(30px + (50 - 30) * (100vw - 900px) / (1600 - 900));
+  }
+}
 .wrapper .main__services__cardsWrap-card-content-title {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
   margin-bottom: 93px;
 }
 .wrapper .main__services__cardsWrap-card-content-title span {
@@ -268,6 +281,11 @@ body {
   font-weight: 500;
   padding: 0 7px;
   border-radius: 7px;
+}
+@media (min-width: 900px) and (max-width: 1600px) {
+  .wrapper .main__services__cardsWrap-card-content-title span {
+    font-size: calc(25px + (30 - 25) * (100vw - 900px) / (1600 - 900));
+  }
 }
 .wrapper .main__services__cardsWrap-card-content-btnWrap {
   display: flex;
@@ -292,6 +310,12 @@ body {
   top: 50%;
   transform: translateY(-50%);
   right: 50px;
+  max-width: 210px;
+}
+@media (min-width: 900px) and (max-width: 1600px) {
+  .wrapper .main__services__cardsWrap-card .mainimg {
+    max-width: calc(160px + (210 - 160) * (100vw - 900px) / (1600 - 900));
+  }
 }
 .wrapper .main__services__cardsWrap .colorGray {
   background-color: #f3f3f3;
