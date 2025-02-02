@@ -175,9 +175,9 @@ body {
             line-height: values(69px, 76px, 1100px, 1600px);
           }
 
-          @media (min-width: 767px) and (max-width: 1100px) {
-            font-size: values(43px, 54px, 767px, 1100px);
-            line-height: values(62px, 69px, 767px, 1100px);
+          @media (min-width: 768px) and (max-width: 1100px) {
+            font-size: values(43px, 54px, 768px, 1100px);
+            line-height: values(62px, 69px, 768px, 1100px);
           }
 
           @media (min-width: 375px) and (max-width: 767px) {
@@ -252,10 +252,16 @@ body {
         display: flex;
         gap: 40px;
 
+        @media (min-width: 375px) and (max-width: 767px) {
+          gap: 30px;
+          flex-direction: column;
+          align-items: center;
+        }
+
         &-title {
           background-color: $green-color;
           padding: 0px 7px 0px 7px;
-          border-radius: 7px 0px 0px 0px;
+          border-radius: 7px;
           height: 51px;
           font-size: 40px;
           font-weight: 500;
@@ -265,8 +271,13 @@ body {
           font-weight: 400;
           line-height: 22.97px;
           text-align: left;
-          width: 580px;
+          max-width: 580px;
           height: 46px;
+
+          @media (min-width: 375px) and (max-width: 767px) {
+            font-size: values(16px, 18px, 375px, 767px);
+            text-align: center;
+          }
         }
       }
 
@@ -280,6 +291,17 @@ body {
           gap: values(25px, 40px, 900px, 1600px); // менше більше, менше більше
           margin: values(40px, 80px, 900px, 1600px) 0
             values(70px, 100px, 900px, 1600px) 0;
+        }
+
+        @media (min-width: 767px) and (max-width: 900px) {
+          gap: values(20px, 25px, 768px, 900px);
+          margin: 40px 0 70px 0;
+        }
+
+        @media (min-width: 375px) and (max-width: 767px) {
+          grid-template-columns: 1fr;
+          margin: 40px 0 70px 0;
+          gap: 30px;
         }
 
         &-card {
@@ -299,6 +321,15 @@ body {
               1600px
             ); // менше більше, менше більше
           }
+
+          @media (min-width: 767px) and (max-width: 900px) {
+            padding: 30px;
+          }
+
+          @media (min-width: 375px) and (max-width: 767px) {
+            max-width: 100%;
+          }
+
           &-content {
             &-title {
               display: flex;
@@ -307,20 +338,29 @@ body {
               z-index: 1;
               margin-bottom: 93px;
 
+              @media (min-width: 375px) and (max-width: 767px) {
+                margin-bottom: 115px;
+              }
+
               span {
                 width: fit-content;
                 font-size: 30px;
                 font-weight: 500;
                 padding: 0 7px;
                 border-radius: 7px;
+                line-height: 38.28px;
 
                 @media (min-width: 900px) and (max-width: 1600px) {
                   font-size: values(
-                    25px,
+                    26px,
                     30px,
                     900px,
                     1600px
                   ); // менше більше, менше більше
+                }
+
+                @media (min-width: 767px) and (max-width: 900px) {
+                  font-size: 26px;
                 }
               }
             }
@@ -340,6 +380,10 @@ body {
                 background: none;
                 border: none;
                 font-size: 20px;
+
+                @media (min-width: 375px) and (max-width: 766px) {
+                  display: none;
+                }
               }
             }
           }
@@ -357,6 +401,19 @@ body {
                 900px,
                 1600px
               ); // менше більше, менше більше
+            }
+
+            @media (min-width: 767px) and (max-width: 900px) {
+              max-width: 160px;
+            }
+
+            @media (min-width: 375px) and (max-width: 767px) {
+              // transform: translateY(-25%)
+              //   scale(
+              //     clamp(0.78, calc(((100vw - 430px) / 337) * 0.22 + 0.78), 1)
+              //   );
+              max-width: values(160px, 200px, 375px, 767px);
+              transform: translateY(-25%);
             }
           }
         }
