@@ -51,6 +51,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Space Grotesk", sans-serif;
+  min-height: 100vh;
 }
 
 button {
@@ -60,14 +61,14 @@ button {
 //font-size: values(16px, 24px, 393px, 1180px);
 
 .wrapper {
-  max-width: 1300px;
+  max-width: 1240px;
   margin: 0 auto;
   margin-top: 60px;
 
   @media (min-width: 1100px) and (max-width: 1600px) {
     max-width: values(
       1000px,
-      1300px,
+      1240px,
       1100px,
       1600px
     ); // менше більше, менше більше
@@ -618,37 +619,40 @@ button {
   }
 
   /* одна карточка*/
+  &__steps {
+    margin-bottom: 140px;
 
-  &__steps-step {
-    @include card-style;
-    background-color: $grey-color;
-    padding: 41px 57px 41px 60px;
-    margin-bottom: 30px;
-    transition: display 2s ease;
-
-    .step__content {
-      font-size: 18px;
-      font-weight: 400;
-      border-top: 1px solid #000;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      padding-top: 0;
-      transition: all 0.3s ease;
-    }
-
-    &.active {
-      background-color: $green-color;
-      transition: background-color 0.3s ease-in-out;
+    &-step {
+      @include card-style;
+      background-color: $grey-color;
+      padding: 41px 57px 41px 60px;
+      margin-bottom: 30px;
+      transition: display 2s ease;
 
       .step__content {
-        max-height: 500px;
-        opacity: 1;
-        padding-top: 30px;
-        margin-top: 30px;
+        font-size: 18px;
+        font-weight: 400;
+        border-top: 1px solid #000;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        padding-top: 0;
+        transition: all 0.3s ease;
       }
-      .process__header__toggle {
-        transform: rotate(90deg);
+
+      &.active {
+        background-color: $green-color;
+        transition: background-color 0.3s ease-in-out;
+
+        .step__content {
+          max-height: 500px;
+          opacity: 1;
+          padding-top: 30px;
+          margin-top: 30px;
+        }
+        .process__header__toggle {
+          transform: rotate(90deg);
+        }
       }
     }
   }
@@ -706,31 +710,67 @@ button {
     }
   }
 
+  &__list {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
   &__item {
     @include card-style;
     max-width: 387px;
     padding: 40px 35px 63px;
+    height: 331px;
 
     &-header {
+      position: relative;
       display: flex;
       gap: 20px;
       align-items: end;
       border-bottom: 1px solid $dark-color;
       padding-bottom: 28px;
       margin-bottom: 28px;
-      &-photo {
-      }
-      &-text {
-      }
-      &-name {
+    }
 
-      }
+    &-image {
+      width: 105px;
+      height: 102px;
 
-      &-role {
+      img {
+        width: 100%;
+      }
+    }
+    &-linkedin {
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      background-color: #000;
+      top: 0px;
+      right: 0;
+
+      img {
+        margin: 8px 8px 9px 9px;
       }
     }
 
     &-bio {
+    }
+  }
+
+  &__button {
+    justify-self: end;
+    button {
+      padding: 20px 76px;
+      background-color: $dark-color;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
     }
   }
 }

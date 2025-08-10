@@ -8,6 +8,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Space Grotesk", sans-serif;
+  min-height: 100vh;
 }
 
 button {
@@ -15,13 +16,13 @@ button {
 }
 
 .wrapper {
-  max-width: 1300px;
+  max-width: 1240px;
   margin: 0 auto;
   margin-top: 60px;
 }
 @media (min-width: 1100px) and (max-width: 1600px) {
   .wrapper {
-    max-width: calc(1000px + (1300 - 1000) * (100vw - 1100px) / (1600 - 1100));
+    max-width: calc(1000px + (1240 - 1000) * (100vw - 1100px) / (1600 - 1100));
   }
 }
 @media (min-width: 767px) and (max-width: 1100px) {
@@ -586,6 +587,9 @@ button {
   font-weight: 400;
   text-align: left;
 }
+.process__steps {
+  margin-bottom: 140px;
+}
 .process__steps-step {
   width: 100%;
   border: 1px solid #191a23;
@@ -675,6 +679,11 @@ button {
   font-weight: 400;
   text-align: left;
 }
+.team__list {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
 .team__item {
   width: 100%;
   border: 1px solid #191a23;
@@ -682,12 +691,46 @@ button {
   box-shadow: 0px 5px 0px 0px;
   max-width: 387px;
   padding: 40px 35px 63px;
+  height: 331px;
 }
 .team__item-header {
+  position: relative;
   display: flex;
   gap: 20px;
   align-items: end;
   border-bottom: 1px solid #191a23;
   padding-bottom: 28px;
   margin-bottom: 28px;
+}
+.team__item-image {
+  width: 105px;
+  height: 102px;
+}
+.team__item-image img {
+  width: 100%;
+}
+.team__item-linkedin {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #000;
+  top: 0px;
+  right: 0;
+}
+.team__item-linkedin img {
+  margin: 8px 8px 9px 9px;
+}
+.team__button {
+  justify-self: end;
+}
+.team__button button {
+  padding: 20px 76px;
+  background-color: #191a23;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
