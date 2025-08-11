@@ -34,12 +34,29 @@ $green-color: #b9ff66;
   font-size: 18px;
   font-weight: 400;
   text-align: left;
+  max-width: 580px;
 }
 @mixin card-style {
   width: 100%;
   border: 1px solid $dark-color;
   border-radius: 45px;
   box-shadow: 0px 5px 0px 0px;
+}
+
+@mixin mobile-head-content {
+  @media (min-width: 375px) and (max-width: 767px) {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+}
+
+@mixin mobile-description-text {
+  @media (min-width: 375px) and (max-width: 767px) {
+    font-size: values(16px, 18px, 375px, 767px);
+    text-align: center;
+  }
 }
 
 * {
@@ -338,27 +355,13 @@ button {
   &__content {
     @include section-title-content;
 
-    @media (min-width: 375px) and (max-width: 767px) {
-      gap: 30px;
-      flex-direction: column;
-      align-items: center;
-    }
-
+    @include mobile-head-content; // style for 375px - 767px
     &-title {
       @include green-title;
     }
     &-desc {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 22.97px;
-      text-align: left;
-      max-width: 580px;
-      height: 46px;
-
-      @media (min-width: 375px) and (max-width: 767px) {
-        font-size: values(16px, 18px, 375px, 767px);
-        text-align: center;
-      }
+      @include green-title-desc;
+      @include mobile-description-text; //style for description text 375px - 767px
     }
   }
 
@@ -562,17 +565,24 @@ button {
       font-weight: 400;
       font-size: 20px;
     }
+
+    @media screen and (min-width: 430px) {
+      margin-bottom: 60px;
+    }
   }
 }
 
 .case-studies {
   &__content {
     @include section-title-content;
+    @include mobile-head-content; // style for 375px - 767px
+
     &-title {
       @include green-title;
     }
     &-desc {
       @include green-title-desc;
+      @include mobile-description-text; //style for description text 375px - 767px
     }
   }
 
